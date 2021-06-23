@@ -1,0 +1,94 @@
+{% extends 'alumni/alumnibase.html' %}
+
+ {% block head %}
+<style>
+    h6
+    {
+    font: bold 100px "Century Schoolbook", Georgia, Times, serif;
+
+            color: yellow;
+
+            line-height: 90%;
+            margin: .2em 0 .4em 0;
+            letter-spacing: 2px;
+            text-align: center;
+
+    }
+    .button {
+  border: none;
+  color: yellow;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 570px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: yellow;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: yellow;
+}
+
+.button2 {
+  background-color: yellow;
+  color: black;
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: yellow;
+}
+
+</style>
+    {% endblock %}
+
+
+
+  {% block content %}
+
+
+
+
+    {% for data in alumni %}
+    {% if data.user.username == info or data.user.username == infos %}
+
+{%load static%}
+<img class="rounded-circle" style="height:100px; margin-left: 580px;" src={%static 'alumni\user.jpg'%} /><br/><br/>
+
+    <h6 ><mark>Name: {{data.firstname}} {{data.secondname}}</h6><br/>
+<h6 ><mark>Email_id: {{data.official_id}}</h6><br/>
+<h6 ><mark>Year Of Pass Out: {{data.year_of_passout}}</h6><br/>
+<h6 ><mark>Current Job: {{data.Current_job}}</h6><br/>
+<h6 ><mark>Branch In Undergrad: {{data.Branch_in_undergrad}}</h6><br/>
+<h6 ><mark>College GPA: {{data.college_gpa}}</h6><br/>
+<h6 ><mark>Examination Taken: {{data.Examination_taken}}</h6><br/>
+<h6 ><mark>Hobbies : {{data.hobbies}}</h6><br/>
+<h6 ><mark>Technologies known : {{data.tech_known}}</h6><br/>
+<h6 ><mark>Internships : {{data.internships}}</h6><br/>
+<h6 ><mark>Job Sector :  {{data.Job_Sector}}</h6><br/>
+
+<h6 ><mark>Current Company: {{data.current_company}}</h6><br/>
+<h6 ><mark>Previous Company: {{data.Previous_company}}</h6><br/>
+<h6><mark>Years Of Experience: {{data.years_of_experience}}</h6><br/>
+<h6 ><mark>About You: {{data.About_you}}</h6><br/>
+<br/>
+<form action="/viewblog/" method="GET">
+
+    <input type="submit" name="View Blog" value="View Blog" class="button button1"></input>
+
+</form>
+
+
+    {%endif%}
+    {% endfor %}
+ {% endblock %}

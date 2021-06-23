@@ -1,0 +1,30 @@
+{% extends 'alumni/alumnibase.html' %}
+
+ {% block head %}
+    {% endblock %}
+{% block content %}
+<h1><mark>Update Your Profile......</mark></h1>
+
+<form style="text-align:center" action="/aprofileupdated/" method="POST">
+    {% csrf_token %}
+    <input type="text"  class="fadeIn second" name="updateemail" placeholder="Email"><br/><br/>
+    <input type="text"  class="fadeIn second" name="updatejob" placeholder="Current job"><br/><br/>
+    <input type="text"  class="fadeIn second" name="updateexam" placeholder="Examinations taken"><br/><br/>
+    <input type="text"  class="fadeIn second" name="updatejobsector" placeholder="Job sector"><br/><br/>
+    <input type="text"  class="fadeIn second" name="updateyears" placeholder="Years of experience"><br/><br/>
+    <input type="text"  class="fadeIn second" name="updatetech" placeholder="Programming technologies working on"><br/><br/>
+    <input type="text"  class="fadeIn second" name="updateinternships" placeholder="internships"><br/><br/>
+    <input type="text"  class="fadeIn second" name="updatepcompany" placeholder="previous company"><br/><br/>
+    <input type="text"  class="fadeIn second" name="updateccompany" placeholder="current company"><br/><br/>
+
+    <input type="text"  class="fadeIn second" name="updatehobbies" placeholder="Hobbies"><br/><br/>
+    <input type="text"  class="fadeIn second" name="updateaboutyou" placeholder="About you"><br/><br/>
+     <input type="submit" class="fadeIn fourth" value="UPGRADE">
+</form>
+
+
+
+
+
+
+ {% endblock %}

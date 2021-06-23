@@ -1,0 +1,85 @@
+{% extends 'alumni/alumnibase.html' %}
+
+ {% block head %}
+<style>
+    h6
+    {
+    font: bold 100px "Century Schoolbook", Georgia, Times, serif;
+            color: yellow;
+
+            line-height: 90%;
+            margin: .2em 0 .4em 0;
+            letter-spacing: 2px;
+            text-align: center;
+
+    }
+    .button {
+  border: none;
+  color: yellow;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 570px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: yellow;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: yellow;
+}
+
+.button2 {
+  background-color: yellow;
+  color: black;
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: yellow;
+  }
+</style>
+    {% endblock %}
+
+
+
+  {% block content %}
+    {% for data in alumni %}
+    {% if user.username == data.user.username %}
+{%load static%}
+<img class="rounded-circle" style="height:100px; margin-left: 580px;" src={%static 'alumni\user.jpg'%} /><br/><br/>
+<h6 ><mark>Name: {{data.firstname}} {{data.secondname}}</mark></h6><br/>
+<h6><mark>Email_id: {{data.official_id}}</mark></h6><br/>
+<h6 ><mark>Year Of Pass Out: {{data.year_of_passout}}</mark></h6><br/>
+<h6 ><mark>Current Job: {{data.Current_job}}</mark></h6><br/>
+<h6 ><mark>Branch In Undergrad: {{data.Branch_in_undergrad}}</mark></h6><br/>
+<h6 ><mark>College GPA: {{data.college_gpa}}</mark></h6><br/>
+<h6 ><mark>Examination Taken: {{data.Examination_taken}}</mark></h6><br/>
+<h6 ><mark>Hobbies : {{data.hobbies}}</mark></h6><br/>
+<h6 ><mark>Technologies known : {{data.tech_known}}</mark></h6><br/>
+<h6><mark>Internships : {{data.internships}}</mark></h6><br/>
+<h6 ><mark>Job Sector :  {{data.Job_Sector}}</mark></h6><br/>
+
+<h6 ><mark>Current Company: {{data.current_company}}</mark></h6><br/>
+<h6 ><mark>Previous Company: {{data.Previous_company}}</mark></h6><br/>
+<h6 ><mark>Years Of Experience: {{data.years_of_experience}}</mark></h6><br/>
+<h6 ><mark>About You: {{data.About_you}}</mark></h6><br/>
+<form action="/blogs/upload/" method="POST">
+    {% csrf_token %}
+
+    <input type="submit" name="View Blog" value="Upgrade Blog" class="button button1"></input>
+
+</form>
+
+    {% endif %}
+    {% endfor %}
+ {% endblock %}

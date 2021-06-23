@@ -1,0 +1,89 @@
+{% extends 'alumni/studentbase.html' %}
+
+ {% block head %}
+<style>
+    h6
+    {
+    font: bold 100px "Century Schoolbook", Georgia, Times, serif;
+
+            color: yellow;
+
+            line-height: 90%;
+            margin: .2em 0 .4em 0;
+            letter-spacing: 2px;
+            text-align: center;
+
+    }
+    .button {
+  border: none;
+  color: yellow;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 570px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: yellow;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: yellow;
+}
+
+.button2 {
+  background-color: yellow;
+  color: black;
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: yellow;
+}
+
+</style>
+    {% endblock %}
+
+
+
+  {% block content %}
+
+
+
+
+    {% for data in student %}
+    {% if data.user.username == info or data.user.username == infos %}
+
+{%load static%}
+<img class="rounded-circle" style="height:100px; margin-left: 580px;" src={%static 'alumni\user.jpg'%} /><br/><br/>
+<h6 ><mark>Name:  {{data.firstname}} {{data.secondname}}</mark></h6><br/>
+<h6 ><mark>Email:  {{data.email}}</h6><br/>
+<h6 ><mark>Program/Branch: {{data.program_branch}}</h6><br/>
+<h6 ><mark>Section: {{data.section}}</h6><br/>
+
+<h6 ><mark>Year Of Admission: {{data.yearofadmission}}</h6><br/>
+<h6 ><mark>Year Of Passing Out: {{data.year_of_passing_out}}</h6><br/>
+<h6 ><mark>Hobbies: {{data.hobbies}}</h6><br/>
+<h6 ><mark>Technologies Known: {{data.tech_known}}</h6><br/>
+<h6 ><mark>Internships : {{data.internships}}</h6><br/>
+<h6 ><mark>About You : {{data.About_you}}</h6><br/>
+<br/>
+<br/>
+<form action="/viewblog/" method="GET">
+
+    <input type="submit" name="View Blog" value="View Blog" class="button button1"></input>
+
+</form>
+
+
+    {%endif%}
+    {% endfor %}
+ {% endblock %}

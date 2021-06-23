@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+      <style>
+      body{
+        background-image: url('https://jooinn.com/images/library-37.jpg');
+         background-repeat:no-repeat;
+         background-size: 100% 100%;
+         opacity: .95;
+      }
+          .col-md-3
+          {
+          display: inline-block;
+          margin-left:-4px;
+          }
+          .carousel-indicators .active {
+          background-color: blue;
+            }
+          .col-md-3 img{
+          width:100%;
+          height:auto;
+          }
+          body .carousel-indicator li{
+          background-color: blue;
+          }
+          body .carousel-indicators{
+          bottom: 0;
+          }
+          body .carousel-control-prev-icon,
+          body .carousel-control-next-icon{
+          background-color: blue;
+          }
+           body .no-padding{
+           padding-left: 0,
+           padding-right: 0;
+           }
+  </style>
+  </head>
+  <body>
+  {% load static %}
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/cardviewprofile">Medicaps Alumni Portal</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/cardviewprofile"> <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/home">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/cardviewprofile" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/cardviewprofile"></a>
+          <a class="dropdown-item" href="/cardviewprofile"></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/cardviewprofile"></a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="/cardviewprofile" tabindex="-1" aria-disabled="true"></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+  <br/><br/><br/>
+  <h3><mark>BTECH/CSE</h3>
+  <div class="container">
+<div id="demo" class="carousel slide my-3" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1" ></li>
+      <li data-target="#demo" data-slide-to="2" ></li>
+    </ul>
+
+    <!--Slideshow starts here -->
+    <div class="container carousel-inner no-padding">
+
+      <div class="carousel-item active">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Manish Roy</h5>
+                <p class="card-text">Current Job:web developer  <br/> College GPA: 8.9 <br/>Technologies: C,C++,JAVA,djang </p>
+                <a name="manishroy" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+       </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Harsh Pathak</h5>
+              <p class="card-text">Current Job:data scientist  <br/> College GPA: 9<br/>Technologies:python/angular/spar </p>
+              <a name="harshpathak" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Himanshu Goyal</h5>
+              <p class="card-text">Current Job:big data scientist  <br/> College GPA:8.6 <br/>Technologies:ML/cloud/angular </p>
+              <a name="himanshugoyal" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Mohammad Sheikh</h5>
+              <p class="card-text">Current Job:web developer  <br/> College GPA:9 <br/>Technologies:PHP/flask/django </p>
+              <a name="mohammadsheikh" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="carousel-item">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Smarth Neema</h5>
+                <p class="card-text">Current Job:IT consultant  <br/> College GPA:9.5 <br/>Technologies:C/C++/java </p>
+                <a name="samarthneema" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Deeksha Jain</h5>
+              <p class="card-text">Current Job:cybersecurity cons.  <br/> College GPA:9 <br/>Technologies:CC/ML </p>
+              <a name="deekshajain" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Harsh Jain</h5>
+              <p class="card-text">Current Job:Multemedia Progr  <br/> College GPA:8.9 <br/>Technologies:JAVA/FLASK </p>
+              <a name="harshjain" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Sarthak jain</h5>
+              <p class="card-text">Current Job:System Analyst  <br/> College GPA:9 <br/>Technologies:C/C++/Java </p>
+              <a name="sarthakjain" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+    </div>
+
+</div>
+
+    <!-- left and right controls for the slide -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+
+<br/><br/><br/>
+  <h3><mark>BTECH/IT</h3>
+  <div class="container">
+<div id="demo" class="carousel slide my-3" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1" ></li>
+      <li data-target="#demo" data-slide-to="2" ></li>
+    </ul>
+
+    <!--Slideshow starts here -->
+    <div class="container carousel-inner no-padding">
+
+      <div class="carousel-item active">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Gaurav Singh</h5>
+                <p class="card-text">Current Job:Game developer  <br/> College GPA:8 <br/>Technologies:computer graph. </p>
+                <a name="gauravsingh" href="/cardviewprofile2" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+       </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Atharva Goyal</h5>
+              <p class="card-text">Current Job:Technical Writer  <br/> College GPA:8.2 <br/>Technologies:C/C++/java </p>
+              <a name="atharvagoyal" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Nehal jain</h5>
+              <p class="card-text">Current Job:web developer  <br/> College GPA:8.6 <br/>Technologies:Python/django/flask </p>
+              <a name="nehaljain" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">gurneet singh</h5>
+              <p class="card-text">Current Job:web developer  <br/> College GPA:8.7 <br/>Technologies:java/PHP </p>
+              <a name="gurneetsingh" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      </div>
+
+
+      </div>
+    </div>
+
+</div>
+
+    <!-- left and right controls for the slide -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+
+<br/><br/><br/>
+  <h3><mark>BTECH/EC</h3>
+  <div class="container">
+<div id="demo" class="carousel slide my-3" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1" ></li>
+      <li data-target="#demo" data-slide-to="2" ></li>
+    </ul>
+
+    <!--Slideshow starts here -->
+    <div class="container carousel-inner no-padding">
+
+      <div class="carousel-item active">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Yash Upadhyay</h5>
+                <p class="card-text">Current Job:dekstop support engg.  <br/> College GPA:9 9<br/>Technologies:java </p>
+                <a name="yashupadhyay" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+       </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Gauri Singh</h5>
+              <p class="card-text">Current Job:System Control Engg  <br/> College GPA:9.2 <br/>Technologies:C/C++/Java </p>
+              <a name="gaurisingh" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Ankush Patidar</h5>
+              <p class="card-text">Current Job:elocronic designer  <br/> College GPA:9.5 <br/>Technologies:java/python </p>
+              <a name="ankushpatidar" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Akshat Jain</h5>
+              <p class="card-text">Current Job:System control engg  <br/> College GPA:9.3 <br/>Technologies:C/C++/java </p>
+              <a name="akshatjain" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      </div>
+
+
+      </div>
+    </div>
+
+</div>
+
+    <!-- left and right controls for the slide -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+
+<br/><br/><br/>
+  <h3><mark>BTECH/MECH</h3>
+  <div class="container">
+<div id="demo" class="carousel slide my-3" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1" ></li>
+      <li data-target="#demo" data-slide-to="2" ></li>
+    </ul>
+
+    <!--Slideshow starts here -->
+    <div class="container carousel-inner no-padding">
+
+      <div class="carousel-item active">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Saurabh Kumar</h5>
+                <p class="card-text">Current Job: Design and engg <br/> College GPA:9.2 <br/> </p>
+                <a name="saurabhkumar" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+       </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Akshay Rathode</h5>
+              <p class="card-text">Current Job:Production manager  <br/> College GPA:9 <br/> </p>
+              <a name="akshayrathode" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Samarth tiwari</h5>
+              <p class="card-text">Current Job: Procurement  <br/> College GPA:8.6 <br/> </p>
+              <a name="samarthtiwari" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Bhavesh Gupta</h5>
+              <p class="card-text">Current Job: Production manager  <br/> College GPA:9.6 <br/> </p>
+              <a name="bhaveshgupta" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      </div>
+
+
+      </div>
+    </div>
+
+</div>
+
+    <!-- left and right controls for the slide -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+
+<br/><br/><br/>
+  <h3><mark>BTECH/CE</h3>
+  <div class="container">
+<div id="demo" class="carousel slide my-3" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1" ></li>
+      <li data-target="#demo" data-slide-to="2" ></li>
+    </ul>
+
+    <!--Slideshow starts here -->
+    <div class="container carousel-inner no-padding">
+
+      <div class="carousel-item active">
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Sakshi soodh</h5>
+                <p class="card-text">Current Job:construction manager  <br/> College GPA: 9.2<br/> </p>
+                <a name="sakshisoodh" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+       </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Ishan Rathode</h5>
+              <p class="card-text">Current Job:Geotechnical Engg.  <br/> College GPA:9.3 <br/> </p>
+              <a name="ishanrathode" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Samarth Goyal</h5>
+              <p class="card-text">Current Job:Transportation engg.  <br/> College GPA:8.6 <br/></p>
+              <a name="samarthgoyal" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-3 col-sm-3 col-md-3">
+          <div class="card" style="width: 18rem;">
+            <img src='{%static "alumni/user.jpg"%}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Ritik Jain</h5>
+              <p class="card-text">Current Job:Urban Planning Eng.  <br/> College GPA:9.2<br/> </p>
+              <a name="ritikjain" href="/cardviewprofile" class="btn btn-primary">View Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      </div>
+
+
+      </div>
+    </div>
+
+</div>
+
+    <!-- left and right controls for the slide -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </body>
+</html>

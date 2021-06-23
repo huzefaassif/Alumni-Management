@@ -1,0 +1,359 @@
+{% extends 'alumni/alumnibase.html' %}
+
+{% block head %}
+    <style>
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+#t01 th {
+  background-color:#242e42;;
+  color: white;
+}
+
+        .col-md-3 {
+            display: inline-block;
+            margin-left: -4px;
+        }
+
+        .col-md-3 {
+            width: 100%;
+            height: auto;
+        }
+
+        body .carousel-control-indicator li {
+            background-color: blue;
+        }
+
+        body .carousel-control-prev-icon body .carousel-control-next-icon {
+            background-color: blue;
+        }
+
+        body .no-padding {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .carousel-control-prev-icon {
+            background: black no-repeat center center;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+        }
+
+        .carousel-control-next-icon {
+            background: black no-repeat center center;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+
+        }
+        body .carousel-indicators{
+        bottom:0;
+        }
+
+        .carousel-indicators .active{
+        background-color: blue;
+        }
+
+
+    </style>
+{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg" style = "background-color:#242e42; color:white">
+  <a class="navbar-brand" href="#">Medicaps Alumni Portal</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cards">Card View</a>
+      </li>
+         <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          BRANCH
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <form action = "/branchfilter/" method="GET">
+          <input type="submit" name="COMPUTER_SCIENCE" value="COMPUTER_SCIENCE" class="dropdown-item" ></input>
+          <input type="submit" name="INFORMATION_TECHNOLOGY" value="INFORMATION_TECHNOLOGY" class="dropdown-item" ></input>
+          <input type="submit" name="ELECTRONICS" value="ELECTRONICS" class="dropdown-item" ></input>
+          <input type="submit" name="MECHANICAL" value="MECHANICAL" class="dropdown-item" ></input>
+          <input type="submit" name="CIVIL" value="CIVIL" class="dropdown-item"></input>
+            </form>
+
+        </div>
+      </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          COMPANY
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <form action = "/companyfilter/" method="GET">
+          <input type="submit" name="Worldpay" value="Worldpay" class="dropdown-item" ></input>
+          <input type="submit" name="Infobeans" value="Infobeans" class="dropdown-item" ></input>
+          <input type="submit" name="TCS" value="TCS" class="dropdown-item" ></input>
+          <input type="submit" name="BSNL" value="BSNL" class="dropdown-item" ></input>
+          <input type="submit" name="Flipkart" value="Flipkart" class="dropdown-item" ></input>
+          <input type="submit" name="Thermax" value="Thermax" class="dropdown-item" ></input>
+          <input type="submit" name="Maruti" value="Maruti" class="dropdown-item" ></input>
+          <input type="submit" name="L&T" value="L&T" class="dropdown-item" ></input>
+          <input type="submit" name="Tikona" value="Tikona" class="dropdown-item" ></input>
+
+            </form>
+
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+      </li>
+    </ul>
+    <form action='/viewprofile/'class="form-inline my-2 my-lg-0" method="POST">
+        {%csrf_token%}
+      <input name="search" class="form-control mr-sm-2" type="search" placeholder="enter username" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" style = "background-color:darkgreen;color:white" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+{% if CSE is not None%}
+<br/>
+<br/>
+<br/>
+<br/>
+<h1><mark>COMPUTER SCIENCE</h1>
+    <table id="t01">
+
+
+  <tr>
+    <th>Name</th>
+    <th>ProgramBranch</th>
+    <th>CollegeGPA</th>
+    <th>Current Job</th>
+    <th>Technologies</th>
+      <th>View profile</th>
+  </tr>
+{% for data in alumni %}
+        {% if data.Branch_in_undergrad == "COMPUTER_SCIENCE" %}
+
+     <tr>
+    <td >{{data.firstname}} {{data.secondname}}</td>
+    <td>{{data.Branch_in_undergrad}}</td>
+    <td>{{data.college_gpa}}</td>
+    <td>{{data.Current_job}}</td>
+    <td>{{data.tech_known}}</td>
+    <td>
+        <form action="/viewprofile/" method="POST" >
+            {% csrf_token %}
+         <button type="submit" name="sub" value="{{data.user.username}}">Click here</button>
+      </form>
+    </td>
+  </tr>
+        {% endif %}
+        {% endfor %}
+
+
+
+  </tr>
+
+
+</table>
+{% endif %}
+
+
+{% if IT is not None%}
+<br/>
+<br/>
+<br/>
+<br/>
+<h1><mark>INFORMATION TECHNOLOGY</h1>
+    <table id="t01">
+
+
+  <tr>
+    <th>Name</th>
+    <th>ProgramBranch</th>
+    <th>CollegeGPA</th>
+    <th>Current Job</th>
+    <th>Technologies</th>
+      <th>View profile</th>
+  </tr>
+{% for data in alumni %}
+        {% if data.Branch_in_undergrad == "INFORMATION_TECHNOLOGY" %}
+
+     <tr>
+    <td >{{data.firstname}} {{data.secondname}}</td>
+    <td>{{data.Branch_in_undergrad}}</td>
+    <td>{{data.college_gpa}}</td>
+    <td>{{data.Current_job}}</td>
+    <td>{{data.tech_known}}</td>
+    <td>
+        <form action="/viewprofile/" method="POST" >
+            {% csrf_token %}
+         <button type="submit" name="sub" value="{{data.user.username}}">Click here</button>
+      </form>
+    </td>
+  </tr>
+        {% endif %}
+        {% endfor %}
+
+
+
+  </tr>
+
+
+</table>
+{% endif %}
+
+{% if EC is not None%}
+<br/>
+<br/>
+<br/>
+<br/>
+<h1><mark>ELECTRONICS</h1>
+    <table id="t01">
+
+
+  <tr>
+    <th>Name</th>
+    <th>ProgramBranch</th>
+    <th>CollegeGPA</th>
+    <th>Current Job</th>
+    <th>Technologies</th>
+      <th>View profile</th>
+  </tr>
+{% for data in alumni %}
+        {% if data.Branch_in_undergrad == "ELECTRONICS" %}
+
+     <tr>
+    <td >{{data.firstname}} {{data.secondname}}</td>
+    <td>{{data.Branch_in_undergrad}}</td>
+    <td>{{data.college_gpa}}</td>
+    <td>{{data.Current_job}}</td>
+    <td>{{data.tech_known}}</td>
+    <td>
+        <form action="/viewprofile/" method="POST" >
+            {% csrf_token %}
+         <button type="submit" name="sub" value="{{data.user.username}}">Click here</button>
+      </form>
+    </td>
+  </tr>
+        {% endif %}
+        {% endfor %}
+
+
+
+  </tr>
+
+
+</table>
+{% endif %}
+
+{% if MECH is not None%}
+<br/>
+<br/>
+<br/>
+<br/>
+<h1><mark>MECHANICAL ENGINEERING</h1>
+    <table id="t01">
+
+
+  <tr>
+    <th>Name</th>
+    <th>ProgramBranch</th>
+    <th>CollegeGPA</th>
+    <th>Current Job</th>
+    <th>Technologies</th>
+      <th>View profile</th>
+  </tr>
+{% for data in alumni %}
+        {% if data.Branch_in_undergrad == "MECHANICAL" %}
+
+     <tr>
+    <td >{{data.firstname}} {{data.secondname}}</td>
+    <td>{{data.Branch_in_undergrad}}</td>
+    <td>{{data.college_gpa}}</td>
+    <td>{{data.Current_job}}</td>
+    <td>{{data.tech_known}}</td>
+    <td>
+        <form action="/viewprofile/" method="POST" >
+            {% csrf_token %}
+         <button type="submit" name="sub" value="{{data.user.username}}">Click here</button>
+      </form>
+    </td>
+  </tr>
+        {% endif %}
+        {% endfor %}
+
+
+
+  </tr>
+
+
+</table>
+{% endif %}
+
+
+
+{% if CE is not None%}
+<br/>
+<br/>
+<br/>
+<br/>
+<h1><mark>CIVIL ENGINEERING</h1>
+    <table id="t01">
+
+
+  <tr>
+    <th>Name</th>
+    <th>ProgramBranch</th>
+    <th>CollegeGPA</th>
+    <th>Current Job</th>
+    <th>Technologies</th>
+      <th>View profile</th>
+  </tr>
+{% for data in alumni %}
+        {% if data.Branch_in_undergrad == "CIVIL" %}
+
+     <tr>
+    <td >{{data.firstname}} {{data.secondname}}</td>
+    <td>{{data.Branch_in_undergrad}}</td>
+    <td>{{data.college_gpa}}</td>
+    <td>{{data.Current_job}}</td>
+    <td>{{data.tech_known}}</td>
+    <td>
+        <form action="/viewprofile/" method="POST" >
+            {% csrf_token %}
+         <button type="submit" name="sub" value="{{data.user.username}}">Click here</button>
+      </form>
+    </td>
+  </tr>
+        {% endif %}
+        {% endfor %}
+
+
+
+  </tr>
+
+
+</table>
+{% endif %}
+
+
+{% endblock%}

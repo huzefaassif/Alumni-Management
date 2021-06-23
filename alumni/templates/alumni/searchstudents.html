@@ -1,0 +1,292 @@
+{% extends 'alumni/studentbase.html' %}
+
+{% block head %}
+    <style>
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+#t01 th {
+  background-color:#242e42;
+  color: white;
+}
+
+        .col-md-3 {
+            display: inline-block;
+            margin-left: -4px;
+        }
+
+        .col-md-3 {
+            width: 100%;
+            height: auto;
+        }
+
+        body .carousel-control-indicator li {
+            background-color: blue;
+        }
+
+        body .carousel-control-prev-icon body .carousel-control-next-icon {
+            background-color: blue;
+        }
+
+        body .no-padding {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .carousel-control-prev-icon {
+            background: black no-repeat center center;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3e%3cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3e%3c/svg%3e");
+        }
+
+        .carousel-control-next-icon {
+            background: black no-repeat center center;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3e%3cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3e%3c/svg%3e");
+
+        }
+        body .carousel-indicators{
+        bottom:0;
+        }
+
+        .carousel-indicators .active{
+        background-color: blue;
+        }
+
+
+    </style>
+{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg" style="background-color:#242e42;color:white">
+  <a class="navbar-brand" href="#">Medicaps Alumni Portal</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+      </li>
+
+
+
+
+
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+      </li>
+    </ul>
+    <form action='/studentviewprofile/'class="form-inline my-2 my-lg-0" method="POST">
+        {%csrf_token%}
+      <input name="search" class="form-control mr-sm-2" type="search" placeholder="enter username" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="background-color:darkgreen;color:white">Search</button>
+    </form>
+  </div>
+</nav>
+<br/>
+<br/>
+<br/>
+<h1><mark>COMPUTER SCIENCE</h1>
+    <table id="t01">
+
+
+  <tr>
+    <th>Name</th>
+    <th>ProgramBranch</th>
+
+    <th>Technologies</th>
+      <th>View profile</th>
+  </tr>
+{% for data in student %}
+        {% if data.program_branch == "COMPUTER_SCIENCE" %}
+
+     <tr>
+    <td >{{data.firstname}} {{data.secondname}}</td>
+    <td>{{data.program_branch}}</td>
+
+    <td>{{data.tech_known}}</td>
+    <td>
+        <form action="/studentviewprofile/" method="POST" >
+            {% csrf_token %}
+         <button type="submit" name="sub" value="{{data.user.username}}">Click here</button>
+      </form>
+    </td>
+  </tr>
+        {% endif %}
+        {% endfor %}
+
+
+
+  </tr>
+
+
+</table>
+
+<br/>
+<br/>
+<br/>
+<h1><mark>INFORMATION TECHNOLOGY</h1>
+    <table id="t01">
+
+
+  <tr>
+    <th>Name</th>
+    <th>ProgramBranch</th>
+
+    <th>Technologies</th>
+      <th>View profile</th>
+  </tr>
+{% for data in student %}
+        {% if data.program_branch == "INFORMATION_TECHNOLOGY" %}
+
+     <tr>
+    <td >{{data.firstname}} {{data.secondname}}</td>
+    <td>{{data.program_branch}}</td>
+
+    <td>{{data.tech_known}}</td>
+    <td>
+        <form action="/studentviewprofile/" method="POST" >
+            {% csrf_token %}
+         <button type="submit" name="sub" value="{{data.user.username}}">Click here</button>
+      </form>
+    </td>
+  </tr>
+        {% endif %}
+        {% endfor %}
+
+
+
+  </tr>
+
+
+</table>
+<br/>
+<br/>
+<br/>
+<h1><mark>ELECTRONICS</h1>
+    <table id="t01">
+
+
+  <tr>
+    <th>Name</th>
+    <th>ProgramBranch</th>
+
+    <th>Technologies</th>
+      <th>View profile</th>
+  </tr>
+{% for data in student %}
+        {% if data.program_branch == "ELECTRONICS" %}
+
+     <tr>
+    <td >{{data.firstname}} {{data.secondname}}</td>
+    <td>{{data.program_branch}}</td>
+
+    <td>{{data.tech_known}}</td>
+    <td>
+        <form action="/studentviewprofile/" method="POST" >
+            {% csrf_token %}
+         <button type="submit" name="sub" value="{{data.user.username}}">Click here</button>
+      </form>
+    </td>
+  </tr>
+        {% endif %}
+        {% endfor %}
+
+
+
+  </tr>
+
+
+</table>
+<br/>
+<br/>
+<br/>
+<h1><mark>MECHANICAL ENGINEERING</h1>
+    <table id="t01">
+
+
+  <tr>
+    <th>Name</th>
+    <th>ProgramBranch</th>
+
+    <th>Technologies</th>
+      <th>View profile</th>
+  </tr>
+{% for data in student %}
+        {% if data.program_branch == "MECHANICAL" %}
+
+     <tr>
+    <td >{{data.firstname}} {{data.secondname}}</td>
+    <td>{{data.program_branch}}</td>
+
+    <td>{{data.tech_known}}</td>
+    <td>
+        <form action="/studentviewprofile/" method="POST" >
+            {% csrf_token %}
+         <button type="submit" name="sub" value="{{data.user.username}}">Click here</button>
+      </form>
+    </td>
+  </tr>
+        {% endif %}
+        {% endfor %}
+
+
+
+  </tr>
+
+
+</table>
+<br/>
+<br/>
+<br/>
+<h1><mark>CIVIL ENGINEERING</h1>
+    <table id="t01">
+
+
+  <tr>
+    <th>Name</th>
+    <th>ProgramBranch</th>
+
+    <th>Technologies</th>
+      <th>View profile</th>
+  </tr>
+{% for data in student %}
+        {% if data.program_branch == "CIVIL" %}
+
+     <tr>
+    <td >{{data.firstname}} {{data.secondname}}</td>
+    <td>{{data.program_branch}}</td>
+
+    <td>{{data.tech_known}}</td>
+    <td>
+        <form action="/studentviewprofile/" method="POST" >
+            {% csrf_token %}
+         <button type="submit" name="sub" value="{{data.user.username}}">Click here</button>
+      </form>
+    </td>
+  </tr>
+        {% endif %}
+        {% endfor %}
+
+
+
+  </tr>
+
+
+</table>
+
+{% endblock%}

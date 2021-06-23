@@ -1,0 +1,100 @@
+{% extends 'alumni/studentbase.html' %}
+
+
+{% block head %}
+<style>
+.card {
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+    h1
+    {
+    font: bold 100px "Century Schoolbook", Georgia, Times, serif;
+
+            color: red;
+
+            line-height: 90%;
+            margin: .2em 0 .4em 0;
+            letter-spacing: 2px;
+            text-align: center;
+
+    }
+   mark
+    {
+  background-color: green;
+  color: black;
+}
+b{
+color:blue;
+}
+mark
+{
+background-color:yellow;
+color:blue;
+}
+</style>
+    {% endblock %}
+
+
+
+ {% block content %}
+<h1  ><mark><b> ABOUT US</b></h1><br/><br/>
+<div class="card" style="margin-left:150px">
+  {%load static%}
+  <img src={%static "alumni\user.jpg"%} alt="Denim Jeans" style="height:300px;width:100%">
+  <h1><mark>Huzefa Asif</mark></h1>
+  <p class="price">EN18CS301103</p>
+  <p><mark>Branch: </mark>Computer Science<br/><mark>College year: </mark>3rd year<br/><mark>Email-id: </mark>huzefaasif717273@gmail.com</p>
+  <p><button><a href="https://www.instagram.com/huzefaasif/">Instagram Profile</a></button></p>
+</div>
+<div class="card" style="margin-left:750px;margin-top:-560px">
+  <img src="https://microhealth.com/assets/images/illustrations/personal-user-illustration-@2x.png" alt="Denim Jeans" style="height:300px;width:100%">
+  <h1>Ishaan Chaturvedi</h1>
+  <p class="price">EN18CS301105</p>
+  <p><mark>Branch: </mark>Computer Science<br/><mark>College year: </mark>3rd year<br/><mark>Email-id: </mark>ishaanchaturvedi12@gmail.com</p>
+  <p><button><a href="https://www.instagram.com/instagrammer/">Instagram Profile</a></button></p>
+</div>
+<br/>
+<br/>
+<div class="card" style="margin-left:150px">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQFGiJ_tIEbFuvt7J7d17ldDOetn-PZteEIDQ&usqp=CAU" alt="Denim Jeans" style="height:300px;width:100%">
+  <h1>Ishan Pathak</h1>
+  <p class="price">EN18CS301107</p>
+  <p><mark>Branch: </mark>Computer Science<br/><mark>College year: </mark>3rd year<br/><mark>Email-id: </mark>ishanpathak7@gmail.com</p>
+  <p><button><a href="https://www.instagram.com/i.s.h.a.n.7/">Instagram Profile</a></button></p>
+</div>
+<div class="card" style="margin-left:750px;margin-top:-560px">
+  <img src={%static 'alumni\jayesh.png'%} style="height:300px;width:100%">
+  <h1>Jayesh Haryani</h1>
+  <p class="price">EN18CS301116</p>
+  <p><mark>Branch: </mark>Computer Science<br/><mark>College year: </mark>3rd year<br/><mark>Email-id: </mark>jharyani48@gmail.com</p>
+  <p><button><a href="https://www.instagram.com/jayesh.haryani/">Instagram Profile</a></button></p>
+</div>
+
+
+    {% endblock %}
